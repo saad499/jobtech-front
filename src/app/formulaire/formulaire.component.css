@@ -1,0 +1,10 @@
+.milieu{
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+img{
+    height: 350px;
+}

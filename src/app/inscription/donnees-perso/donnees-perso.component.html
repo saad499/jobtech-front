@@ -1,0 +1,72 @@
+<ul class="nav justify-content-center mt-3">
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link active" aria-current="page" style="color: black;"  routerLink="/Donneespre">Données personnels</a>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link" style="color: black;"  routerLink="/DonneesAccadem">Données accadémiques</a>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link" style="color: black;"  routerLink="/plusInfo">Plus d'infos</a>
+    </li>
+</ul>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 m-2">
+            <form (ngSubmit)="submitForm()">
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="prenom" class="form-label">Prénom</label>
+                            <input type="text" ngModel required class="form-control" id="prenom" placeholder="Votre prénom">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="nom" class="form-label">Nom de famille</label>
+                            <input type="text" ngModel required class="form-control" id="nom" placeholder="Votre nom de famille">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="dateNaissance" class="form-label">Date de naissance</label>
+                    <input type="date" ngModel required class="form-control" id="dateNaissance">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" ngModel required class="form-control" id="email" placeholder="Votre adresse email">
+                </div>
+                <div class="mb-3">
+                    <label for="genre" class="form-label">Genre</label>
+                    <select class="form-select" id="genre"  ngModel required>
+                        <option value="">Sélectionnez votre genre</option>
+                        <option value="homme">Homme</option>
+                        <option value="femme">Femme</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="telephone" class="form-label">Téléphone</label>
+                    <input type="tel" ngModel required class="form-control" id="telephone" placeholder="Votre numéro de téléphone">
+                </div>
+                <div class="mb-3">
+                    <label for="adresse" class="form-label">Adresse</label>
+                    <textarea class="form-control" id="adresse" rows="3" placeholder="Votre adresse"></textarea>
+                </div>
+                <div>
+                    <div class="d-flex justify-content-between">
+                        <a class="btn border" routerLink="/">
+                            <i class="bi bi-arrow-left"></i>
+                            <span class="ms-1">Précédent</span>
+                            
+                        </a>
+                        <a class="btn border" routerLink="/DonneesAccadem">
+                            <span>Suivant</span>
+                            <i class="bi bi-arrow-right ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
