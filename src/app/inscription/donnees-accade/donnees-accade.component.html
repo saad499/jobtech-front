@@ -1,12 +1,12 @@
 <ul class="nav justify-content-center mt-3">
-    <li class="nav-item" routerLinkActive="active" >
-      <a class="nav-link active" aria-current="page" style="color: black;" routerLink="/Donneespre">Données personnels</a>
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link active" aria-current="page" style="color: black;"  routerLink="/Donneespre">Données personnels</a>
     </li>
     <li class="nav-item" routerLinkActive="active">
-      <a class="nav-link" style="color: black;" routerLink="/DonneesAccadem">Données accadémiques</a>
+      <a class="nav-link" style="color: black;"  routerLink="/DonneesAccadem">Données accadémiques</a>
     </li>
     <li class="nav-item" routerLinkActive="active">
-      <a class="nav-link" style="color: black;" routerLink="/plusInfo">Plus d'infos</a>
+      <a class="nav-link" style="color: black;"  routerLink="/plusInfo">Plus d'infos</a>
     </li>
 </ul>
 
@@ -14,116 +14,140 @@
     <div class="row justify-content-center">
         <div class="col-md-6 m-2">
             <form>
-                        <div class="mb-3">
-                            <label class="form-label">Niveau Académique *</label>
-                            <select class="form-select"  ngModel required>
-                                <option value="">Sélectionnez l'option qui vous convient</option>
-                                <option value="moinsbac2"> Moins Bac + 2 </option>
-                                <option value="Bac3">Bac + 3</option>
-                                <option value="bac4">Bac + 4</option>
-                                <option value="bac5">Bac + 5</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label  class="form-label">Filière Académique *</label>
-                            <select class="form-select" ngModel required>
-                                <option value="">Sélectionnez l'option qui vous convient</option>
-                                <option value="FFC"> Faculté - Formation continue (Temps Partiel) </option>
-                                <option value="DUP"> Faculté - Université Publique </option>
-                                <option value="ofppt"> OFPPT </option>
-                                <option value="UP">Université Privée</option>
-                                <option value="ESP">Ecole Supérieure Privée</option>
-                                <option value="EFPP">Ecole de Formation Professionnel Privé</option>
-                                <option value="EMCP">Ecole de Management et Commerce Publique</option>
-                                <option value="EIProve">Ecole d'Ingénieur Privé</option>
-                                <option value="EIPublic">Ecole d'Ingénieur Public</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label  class="form-label">Etablissment Fréquenté *</label>
-                            <select class="form-select" ngModel required>
-                                <option value="">Sélectionnez l'option qui vous convient</option>
-                                <option value="info"> Informatique </option>
-                                <option value="geniepasinfo"> Ingénierie (Autre que Informatique) </option>
-                                <option value="genieinfo"> Ingénierie Informatique </option>
-                                <option value="lettre">Lettres</option>
-                                <option value="humainsocial">Sciences Humaines et Sociales</option>
-                                <option value="science">Scientifique</option>
-                                <option value="technique">Technique (Autre que Informatique)</option>
-                                <option value="Economie">Economie et Gestion</option>
-                            </select>
-                        </div>
+                <div class="mb-3">
+                    <label class="form-label">Niveau Académique *</label><br>
+                    <span style="color: rgb(28, 211, 180);">
+                        Sélectionnez votre niveau académique.
+                    </span>
+                    <select class="form-select mt-1"  ngModel required>
+                        <option value="">Sélectionnez l'option qui vous convient</option>
+                        <option value="moinsbac2"> Moins Bac + 2 </option>
+                        <option value="Bac3">Bac + 3</option>
+                        <option value="bac4">Bac + 4</option>
+                        <option value="bac5">Bac + 5</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label  class="form-label">Filière Académique *</label><br>
+                    <span style="color: rgb(28, 211, 180);">
+                        Sélectionnez votre filière académique.
+                    </span>
+                    <select class="form-select mt-1" ngModel required>
+                        <option value="">Sélectionnez l'option qui vous convient</option>
+                        <option value="FFC"> Faculté - Formation continue (Temps Partiel) </option>
+                        <option value="DUP"> Faculté - Université Publique </option>
+                        <option value="ofppt"> OFPPT </option>
+                        <option value="UP">Université Privée</option>
+                        <option value="ESP">Ecole Supérieure Privée</option>
+                        <option value="EFPP">Ecole de Formation Professionnel Privé</option>
+                        <option value="EMCP">Ecole de Management et Commerce Publique</option>
+                        <option value="EIProve">Ecole d'Ingénieur Privé</option>
+                        <option value="EIPublic">Ecole d'Ingénieur Public</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label  class="form-label">Etablissment Fréquenté *</label><br>
+                    <span style="color: rgb(28, 211, 180);">
+                        Sélectionnez votre type d'établissement que vous fréquentez ou que vous aviez fréquenté.
+                    </span>
+                    <select class="form-select mt-1" ngModel required>
+                        <option value="">Sélectionnez l'option qui vous convient</option>
+                        <option value="info"> Informatique </option>
+                        <option value="geniepasinfo"> Ingénierie (Autre que Informatique) </option>
+                        <option value="genieinfo"> Ingénierie Informatique </option>
+                        <option value="lettre">Lettres</option>
+                        <option value="humainsocial">Sciences Humaines et Sociales</option>
+                        <option value="science">Scientifique</option>
+                        <option value="technique">Technique (Autre que Informatique)</option>
+                        <option value="Economie">Economie et Gestion</option>
+                    </select>
+                </div>
                 
-                        <div class="mb-3">
-                            <label class="form-label">Expérience Professionnelle *</label>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="oui" id="oui" value="oui">
-                                        <label class="form-check-label" for="oui">Oui</label>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="non" id="non" value="non">
-                                        <label class="form-check-label" for="non">Non</label>
-                                    </div>
-                                </div>    
+                <div class="mb-3">
+                    <label class="form-label">Expérience Professionnelle *</label><br>
+                    <span style="color: rgb(28, 211, 180);">
+                        Avez-vous une expérience professionnelle ?
+                    </span>
+                    <div class="row mt-1">
+                        <div class="col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="oui" id="oui" value="oui">
+                                <label class="form-check-label" for="oui">Oui</label>
                             </div>
                         </div>
+                        <div class="col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="non" id="non" value="non">
+                                <label class="form-check-label" for="non">Non</label>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
 
-                        <div class="mb-3">
-                            <label  class="form-label">Situation *</label>
-                            <select class="form-select" ngModel required>
-                                <option value="">Sélectionnez l'option qui vous convient</option>
-                                <option value="Choix2"> Je serai prochainement diplômé en informatique et je souhaite améliorer mes compétences (Up-Skilling Étudiant) </option>
-                                <option value="Choix3"> Je serai prochainement diplômé, non IT, et je souhaite me reconvertir vers l IT (Re-Skilling Étudiant) </option>
-                                <option value="Choix4"> Je suis récemment diplômé en IT, en recherche d emploi et je souhaite consolider mes compétences (Up-Skilling Diplômé)</option>
-                                <option value="Choix5">Je suis récemment diplômé, en recherche d emploi, et je souhaite me réorienter vers l IT (Re-Skilling Diplômé)</option>
-                                <option value="Choix6">Je travaille actuellement, je ne suis pas satisfait de ma situation et souhaite me reconvertir vers l IT (Re-Skilling Employés)</option>
-                                <option value="Choix7">J ai perdu mon emploi, je souhaite me réorienter vers l IT (Re-Skilling Chercheurs d Emploi)</option>
-                            </select>
-                        </div>
+                <div class="mb-3">
+                    <label  class="form-label">Situation *</label><br>
+                    <span style="color: rgb(28, 211, 180);">
+                        Quelle est la situation qui vous caractérise le mieux ?
+                    </span>
+                    <select class="form-select" ngModel required>
+                        <option value="">Sélectionnez l'option qui vous convient</option>
+                        <option value="Choix2"> Je serai prochainement diplômé en informatique et je souhaite améliorer mes compétences (Up-Skilling Étudiant) </option>
+                        <option value="Choix3"> Je serai prochainement diplômé, non IT, et je souhaite me reconvertir vers l IT (Re-Skilling Étudiant) </option>
+                        <option value="Choix4"> Je suis récemment diplômé en IT, en recherche d emploi et je souhaite consolider mes compétences (Up-Skilling Diplômé)</option>
+                        <option value="Choix5">Je suis récemment diplômé, en recherche d emploi, et je souhaite me réorienter vers l IT (Re-Skilling Diplômé)</option>
+                        <option value="Choix6">Je travaille actuellement, je ne suis pas satisfait de ma situation et souhaite me reconvertir vers l IT (Re-Skilling Employés)</option>
+                        <option value="Choix7">J ai perdu mon emploi, je souhaite me réorienter vers l IT (Re-Skilling Chercheurs d Emploi)</option>
+                    </select>
+                </div>
 
-                        <div class="mb-3">
-                            <label class="form-label">Diplômé Depuis *</label>
-                            <select class="form-select"  ngModel required>
-                                <option value="">Sélectionnez l'option qui vous convient</option>
-                                <option value="pasencore"> Pas encore diplômé </option>
-                                <option value="moins1">Moins d'un an</option>
-                                <option value="entre12">1 à 2 ans</option>
-                                <option value="plus2">Plus de 2 ans</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Recherche Emploi *</label>
-                            <select class="form-select"  ngModel required>
-                                <option value="">Je travail, mais je souhaite changer d'emploi</option>
-                                <option value="chercheremploi"> Je commence à peine ma recherche d'emploi (- de 3mois) </option>
-                                <option value="3mois">Depuis 6 mois</option>
-                                <option value="depuis6">Depuis 1 an</option>
-                                <option value="depuis1">Entre 1 et 2ans</option>
-                                <option value="entre12">Plus de 2ans</option>
-                            </select>
-                        </div>
+                <div class="mb-3">
+                    <label class="form-label">Diplômé Depuis *</label><br>
+                    <span style="color: rgb(28, 211, 180);">
+                        Depuis combien de temps êtes vous diplômé ?
+                    </span>
+                    <select class="form-select"  ngModel required>
+                        <option value="">Sélectionnez l'option qui vous convient</option>
+                        <option value="pasencore"> Pas encore diplômé </option>
+                        <option value="moins1">Moins d'un an</option>
+                        <option value="entre12">1 à 2 ans</option>
+                        <option value="plus2">Plus de 2 ans</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Recherche Emploi *</label><br>
+                    <span style="color: rgb(28, 211, 180);">
+                        Depuis combien de temps êtes vous en recherche d'emploi ?
+                    </span>
+                    <select class="form-select"  ngModel required>
+                        <option value="">Je travail, mais je souhaite changer d'emploi</option>
+                        <option value="chercheremploi"> Je commence à peine ma recherche d'emploi (- de 3mois) </option>
+                        <option value="3mois">Depuis 6 mois</option>
+                        <option value="depuis6">Depuis 1 an</option>
+                        <option value="depuis1">Entre 1 et 2ans</option>
+                        <option value="entre12">Plus de 2ans</option>
+                    </select>
+                </div>
 
-                        <div class="mb-3">
-                            <label class="form-label">Inscription ANAPEC *</label>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="oui" id="oui" value="oui">
-                                        <label class="form-check-label" for="oui">Oui</label>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="non" id="non" value="non">
-                                        <label class="form-check-label" for="non">Non</label>
-                                    </div>
-                                </div>    
+                <div class="mb-3">
+                    <label class="form-label">Inscription ANAPEC *</label><br>
+                    <span style="color: rgb(28, 211, 180);">
+                        Êtes-vous inscrit à l'ANAPEC ?
+                    </span>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="oui" id="oui" value="oui">
+                                <label class="form-check-label" for="oui">Oui</label>
                             </div>
                         </div>
+                        <div class="col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="non" id="non" value="non">
+                                <label class="form-check-label" for="non">Non</label>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
                 <div>
                     <div class="d-flex justify-content-between">
                         <a class="btn border" routerLink="/Donneespre">
@@ -131,13 +155,40 @@
                             <span class="ms-1">Précédent</span>
                             
                         </a>
-                        <a class="btn border" routerLink="/plusInfo">
+                        <a class="btn border" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                             <span>Suivant</span>
                             <i class="bi bi-arrow-right ms-1"></i>
                         </a>
+                    </div>
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3 class="modal-title" id="staticBackdropLabel">Catalogue de Formation</h3>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Avant de poser la question suivante relative à la disponibilité du candidat je recommande de 
+                                    lister les contenus des formation et programmes dans cette étape, on peut aussi publier la date 
+                                    de lancements de chaque formation, comme ça le candidat pourra bien choisir la bonne formation 
+                                    et la date de lancement selon des disponibilités. Des liens externes pourront aussi être ajoutés 
+                                    pour expliquer en profondeur le but de chaque formation, les technos etc.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                   
+                                    <a class="btn border" data-bs-toggle="modal" routerLink="/plusInfo">
+                                        <span>Suivant</span>
+                                        <i class="bi bi-arrow-right ms-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
+                    

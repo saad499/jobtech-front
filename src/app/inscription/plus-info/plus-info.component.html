@@ -1,11 +1,245 @@
 <ul class="nav justify-content-center mt-3">
     <li class="nav-item" routerLinkActive="active">
-      <a class="nav-link active" style="color: black;"  aria-current="page" routerLink="/Donneespre">Données personnels</a>
+      <a class="nav-link active" aria-current="page" style="color: black;"  routerLink="/Donneespre">Données personnels</a>
     </li>
     <li class="nav-item" routerLinkActive="active">
       <a class="nav-link" style="color: black;"  routerLink="/DonneesAccadem">Données accadémiques</a>
     </li>
     <li class="nav-item" routerLinkActive="active">
-      <a class="nav-link"style="color: black;"  routerLink="/plusInfo">Plus d'infos</a>
+      <a class="nav-link" style="color: black;"  routerLink="/plusInfo">Plus d'infos</a>
     </li>
 </ul>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 m-2">
+            <form>
+                <div class="mb-3">
+                    <label class="form-label">disponibilité *</label>
+                    <div class="row">
+                        <span style="color: rgb(28, 211, 180);">
+                            Vous déclarez être bien disponible à temps plein sur toute la durée de la formation ?
+                        </span>
+                        <div class="col mt-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="oui" id="oui" value="oui">
+                                <label class="form-check-label" for="oui">Oui</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="non" id="non" value="non">
+                                <label class="form-check-label" for="non">Non</label>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+                <div class="mb-3">
+                    
+                    <label class="form-label">Financement *</label>
+                    <br>
+                    <span style="color: rgb(28, 211, 180);">
+                        Comment prévoyez-vous de financer vos déplacements et vos frais de vie durant la formation ?
+                    </span>
+                    <select class="form-select mt-1"  ngModel required>
+                        <option value="">Sélectionnez l'option qui vous convient</option>
+                        <option value="proche"> Aide par un proche </option>
+                        <option value="eco"> Des économies </option>
+                    </select>
+                </div>
+
+                <label class="form-label">Ordinateur Portable *</label>
+                <div class="row">
+                    <span style="color: rgb(28, 211, 180);">
+                        Avez-vous un ordinateur portable personnel que vous pouvez utiliser lors de la formation ? De préférence 
+                        avoir une configuration minimum : Processeur i5 + 16Go de Ram + 500Go SSD.
+                    </span>
+                    <div class="col mt-1">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="oui" id="oui" value="oui">
+                            <label class="form-check-label" for="oui">Oui</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="non" id="non" value="non">
+                            <label class="form-check-label" for="non">Non</label>
+                        </div>
+                    </div>    
+                </div>
+                <label class="form-label">Français *</label>
+                    <div class="row">
+                        <span style="color: rgb(28, 211, 180);">
+                            Parlez-vous le Français ?
+                        </span>
+                        <div class="col mt-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="oui" id="oui" value="oui">
+                                <label class="form-check-label" for="oui">Oui</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="non" id="non" value="non">
+                                <label class="form-check-label" for="non">Non</label>
+                            </div>
+                        </div>    
+                    </div>
+                    <label class="form-label">Anglais *</label>
+                    <div class="row">
+                        <span style="color: rgb(28, 211, 180);">
+                            Parlez-vous l'anglais ?
+                        </span>
+                        <div class="col mt-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="oui" id="oui" value="oui">
+                                <label class="form-check-label" for="oui">Oui</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="non" id="non" value="non">
+                                <label class="form-check-label" for="non">Non</label>
+                            </div>
+                        </div>    
+                    </div>
+                    <label class="form-label">Pré-Requis Coding *</label>
+                    <div class="row">
+                        <span style="color: rgb(28, 211, 180);">
+                            Avez-vous des pré-requis en coding ?
+                        </span>
+                        <div class="col mt-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="oui" id="oui" value="oui">
+                                <label class="form-check-label" for="oui">Oui</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="non" id="non" value="non">
+                                <label class="form-check-label" for="non">Non</label>
+                            </div>
+                        </div>    
+                    </div>
+
+                    <label class="form-label">Autodidacte *</label>
+                    <div class="row">
+                        <span style="color: rgb(28, 211, 180);">
+                            Avez-vous déjà essayé d'apprendre le développement informatique par vous-même ?
+                        </span>
+                        <div class="col mt-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="oui" id="oui" value="oui">
+                                <label class="form-check-label" for="oui">Oui</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="non" id="non" value="non">
+                                <label class="form-check-label" for="non">Non</label>
+                            </div>
+                        </div>    
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Recherche Emploi *</label><br>
+                        <span style="color: rgb(28, 211, 180);">
+                            Comment avez-vous entendu parler du programme ?
+                        </span>
+                        <select class="form-select"  ngModel required>
+                            <option value="">Je travail, mais je souhaite changer d'emploi</option>
+                            <option value="chercheremploi"> Je commence à peine ma recherche d'emploi (- de 3mois) </option>
+                            <option value="3mois">Depuis 6 mois</option>
+                            <option value="depuis6">Depuis 1 an</option>
+                            <option value="depuis1">Entre 1 et 2ans</option>
+                            <option value="entre12">Plus de 2ans</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Recherche Emploi *</label><br>
+                        <span style="color: rgb(28, 211, 180);">
+                            Comment avez-vous entendu parler du programme ?
+                        </span><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <label class="form-check-label" for="inlineCheckbox1">La Presse</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                            <label class="form-check-label" for="inlineCheckbox2">Ecole /Université</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                            <label class="form-check-label" for="inlineCheckbox2">Facebook</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                            <label class="form-check-label" for="inlineCheckbox2">Instegram</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                            <label class="form-check-label" for="inlineCheckbox2">Linkdin</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                            <label class="form-check-label" for="inlineCheckbox2">Twitter</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                            <label class="form-check-label" for="inlineCheckbox2">Ami(e) / Connaissance</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                            <label class="form-check-label" for="inlineCheckbox2">Radio</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                            <label class="form-check-label" for="inlineCheckbox2">Télévision</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                            <label class="form-check-label" for="inlineCheckbox2">Forum Etudiant</label>
+                        </div>
+                    </div>                        
+                <div>
+                    <div class="d-flex justify-content-between">
+                        <a class="btn border" routerLink="/Donneespre">
+                            <i class="bi bi-arrow-left"></i>
+                            <span class="ms-1">Précédent</span>
+                            
+                        </a>
+                        <a class="btn border" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <span>Suivant</span>
+                            <i class="bi bi-arrow-right ms-1"></i>
+                        </a>
+                    </div>
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header col d-flex justify-content-center">
+                                    <h5 class="modal-title" id="staticBackdropLabel" style="color: rgb(61, 217, 61);">Les informations sont bien enregistrés</h5>
+                                    
+                                </div>
+                                <div class="modal-body">
+                                    <div class="col d-flex justify-content-center">
+                                        <img src="../../../assets/images/validation.webp" class="img-fluid" alt="Image" style="height: 250px; width: 250px;">
+                                      </div>
+                                </div>
+                                <div class="modal-footer col d-flex justify-content-center">
+                                   
+                                    <a class="btn border" style="background-color: greenyellow;" data-bs-toggle="modal" routerLink="/formulaire">
+                                        <span>Validé</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

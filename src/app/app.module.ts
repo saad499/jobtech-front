@@ -9,6 +9,7 @@ import { NavbarComponent } from './inscription/navbar/navbar.component';
 import { DonneesPersoComponent } from './inscription/donnees-perso/donnees-perso.component';
 import { DonneesAccadeComponent } from './inscription/donnees-accade/donnees-accade.component';
 import { PlusInfoComponent } from './inscription/plus-info/plus-info.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,10 @@ import { PlusInfoComponent } from './inscription/plus-info/plus-info.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

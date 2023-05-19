@@ -12,6 +12,7 @@ const routes: Routes = [
   {path:'DonneesAccadem',component:DonneesAccadeComponent},
   {path:'Donneespre',component:DonneesPersoComponent},
   {path:'plusInfo',component:PlusInfoComponent},
+  {path:'formulaire',component:FormulaireComponent}
 ];
 
 @NgModule({
