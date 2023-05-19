@@ -1,3 +1,6 @@
+<div class="progress">
+    <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
 <ul class="nav justify-content-center mt-3">
     <li class="nav-item" routerLinkActive="active">
       <a class="nav-link active" aria-current="page" style="color: black;"  routerLink="/Donneespre">Données personnels</a>
@@ -5,7 +8,7 @@
     <li class="nav-item" routerLinkActive="active">
       <a class="nav-link" style="color: black;"  routerLink="/DonneesAccadem">Données accadémiques</a>
     </li>
-    <li class="nav-item" routerLinkActive="active">
+    <li class="nav-item" routerLinkActive="active" style="background-color: rgb(28, 211, 180);">
       <a class="nav-link" style="color: black;"  routerLink="/plusInfo">Plus d'infos</a>
     </li>
 </ul>
@@ -13,7 +16,7 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6 m-2">
-            <form>
+            <form [formGroup]="plusInfoFromGroup">
                 <div class="mb-3">
                     <label class="form-label">disponibilité *</label>
                     <div class="row">
@@ -22,33 +25,33 @@
                         </span>
                         <div class="col mt-1">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="oui" id="oui" value="oui">
-                                <label class="form-check-label" for="oui">Oui</label>
+                                <input class="form-check-input" type="radio" name="disponible" formControlName="disponible" id="disponibleoui" value="oui">
+                                <label class="form-check-label" >Oui</label>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="non" id="non" value="non">
-                                <label class="form-check-label" for="non">Non</label>
+                                <input class="form-check-input" type="radio" name="disponible" formControlName="disponible" id="disponiblenon" value="non">
+                                <label class="form-check-label">Non</label>
                             </div>
                         </div>    
                     </div>
                 </div>
                 <div class="mb-3">
                     
-                    <label class="form-label">Financement *</label>
+                    <label>Financement *</label>
                     <br>
                     <span style="color: rgb(28, 211, 180);">
                         Comment prévoyez-vous de financer vos déplacements et vos frais de vie durant la formation ?
                     </span>
-                    <select class="form-select mt-1"  ngModel required>
+                    <select class="form-select mt-1" style="background-color: #f1f3f6;" formControlName="financement">
                         <option value="">Sélectionnez l'option qui vous convient</option>
                         <option value="proche"> Aide par un proche </option>
                         <option value="eco"> Des économies </option>
                     </select>
                 </div>
 
-                <label class="form-label">Ordinateur Portable *</label>
+                <label>Ordinateur Portable *</label>
                 <div class="row">
                     <span style="color: rgb(28, 211, 180);">
                         Avez-vous un ordinateur portable personnel que vous pouvez utiliser lors de la formation ? De préférence 
@@ -56,14 +59,14 @@
                     </span>
                     <div class="col mt-1">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="oui" id="oui" value="oui">
-                            <label class="form-check-label" for="oui">Oui</label>
+                            <input class="form-check-input" formControlName="ordinateurPortaban" type="radio" id="Ordinateuroui" value="oui">
+                            <label class="form-check-label">Oui</label>
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="non" id="non" value="non">
-                            <label class="form-check-label" for="non">Non</label>
+                            <input class="form-check-input" formControlName="ordinateurPortaban" type="radio" id="Ordinateurnon" value="non">
+                            <label class="form-check-label">Non</label>
                         </div>
                     </div>    
                 </div>
@@ -74,14 +77,14 @@
                         </span>
                         <div class="col mt-1">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="oui" id="oui" value="oui">
-                                <label class="form-check-label" for="oui">Oui</label>
+                                <input class="form-check-input" formControlName="langueFrancais" type="radio" id="Françaisoui" value="oui">
+                                <label class="form-check-label">Oui</label>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="non" id="non" value="non">
-                                <label class="form-check-label" for="non">Non</label>
+                                <input class="form-check-input" formControlName="langueFrancais" type="radio" id="Françaisnon" value="non">
+                                <label class="form-check-label">Non</label>
                             </div>
                         </div>    
                     </div>
@@ -92,14 +95,14 @@
                         </span>
                         <div class="col mt-1">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="oui" id="oui" value="oui">
-                                <label class="form-check-label" for="oui">Oui</label>
+                                <input class="form-check-input" formControlName="langueAnglais" type="radio" id="Anglaisoui" value="oui">
+                                <label class="form-check-label">Oui</label>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="non" id="non" value="non">
-                                <label class="form-check-label" for="non">Non</label>
+                                <input class="form-check-input" formControlName="langueAnglais" type="radio" id="Anglaisnon" value="non">
+                                <label class="form-check-label">Non</label>
                             </div>
                         </div>    
                     </div>
@@ -110,14 +113,14 @@
                         </span>
                         <div class="col mt-1">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="oui" id="oui" value="oui">
-                                <label class="form-check-label" for="oui">Oui</label>
+                                <input class="form-check-input" formControlName="preRequisCoding" type="radio"id="Codingoui" value="oui">
+                                <label class="form-check-label">Oui</label>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="non" id="non" value="non">
-                                <label class="form-check-label" for="non">Non</label>
+                                <input class="form-check-input" formControlName="preRequisCoding" type="radio" id="Codingnon" value="non">
+                                <label class="form-check-label">Non</label>
                             </div>
                         </div>    
                     </div>
@@ -129,79 +132,83 @@
                         </span>
                         <div class="col mt-1">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="oui" id="oui" value="oui">
-                                <label class="form-check-label" for="oui">Oui</label>
+                                <input class="form-check-input" type="radio" formControlName="autodidacte" id="autodidacteoui" value="oui">
+                                <label class="form-check-label">Oui</label>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="non" id="non" value="non">
-                                <label class="form-check-label" for="non">Non</label>
+                                <input class="form-check-input" type="radio" formControlName="autodidacte" id="autodidactenon" value="non">
+                                <label class="form-check-label">Non</label>
                             </div>
                         </div>    
                     </div>
 
+<!---->
                     <div class="mb-3">
-                        <label class="form-label">Recherche Emploi *</label><br>
-                        <span style="color: rgb(28, 211, 180);">
-                            Comment avez-vous entendu parler du programme ?
-                        </span>
-                        <select class="form-select"  ngModel required>
-                            <option value="">Je travail, mais je souhaite changer d'emploi</option>
-                            <option value="chercheremploi"> Je commence à peine ma recherche d'emploi (- de 3mois) </option>
-                            <option value="3mois">Depuis 6 mois</option>
-                            <option value="depuis6">Depuis 1 an</option>
-                            <option value="depuis1">Entre 1 et 2ans</option>
-                            <option value="entre12">Plus de 2ans</option>
-                        </select>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Recherche Emploi *</label><br>
+                        <label class="form-label">Référents *</label><br>
                         <span style="color: rgb(28, 211, 180);">
                             Comment avez-vous entendu parler du programme ?
                         </span><br>
+                        <div>
+                        <div class="form-check form-check-inline my-1">
+                            <input class="form-check-input" formControlName="referents" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <label class="form-check-label">La Presse</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" formControlName="referents" id="inlineCheckbox2" value="option2">
+                            <label class="form-check-label">Ecole /Université</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" formControlName="referents" id="inlineCheckbox3" value="option3">
+                            <label class="form-check-label">Facebook</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" formControlName="referents" id="inlineCheckbox4" value="option4">
+                            <label class="form-check-label">Instagram</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" formControlName="referents" id="inlineCheckbox5" value="option5">
+                            <label class="form-check-label">LinkedIn</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" formControlName="referents" id="inlineCheckbox6" value="option6">
+                            <label class="form-check-label">Twitter</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" formControlName="referents" id="inlineCheckbox7" value="option7">
+                            <label class="form-check-label">Ami(e) / Connaissance</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" formControlName="referents" id="inlineCheckbox8" value="option8">
+                            <label class="form-check-label">Radio</label>
+                          </div>
+                        
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                            <label class="form-check-label" for="inlineCheckbox1">La Presse</label>
+                            <input class="form-check-input" type="checkbox" formControlName="referents" id="inlineCheckbox9" value="option2">
+                            <label class="form-check-label">Télévision</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                            <label class="form-check-label" for="inlineCheckbox2">Ecole /Université</label>
+                            <input class="form-check-input" type="checkbox" formControlName="referents" id="inlineCheckbox10" value="option2">
+                            <label class="form-check-label">Forum Etudiant</label>
                         </div>
+                        </div>
+                    </div>   
+                    
+                    <div class="mb-3">
+                        
+                        <label class="form-label">Commentaire</label><br>
+                        <span style="color: rgb(28, 211, 180);">
+                            Laissez-nous un commentaire si vous en avez un, nous serions heureux de vous lire
+                        </span>
+                        <textarea class="form-control my-1" formControlName="commentaire" style="background-color: #f1f3f6;" id="commentaire" rows="3" placeholder="Ecrire un commentaire" ></textarea>
+                    </div>
+                    <div class="mb-3">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                            <label class="form-check-label" for="inlineCheckbox2">Facebook</label>
+                            <input class="form-check-input" formControlName="validCondition" type="checkbox" id="inlineCheckbox22" value="option2">
+                            <label class="form-check-label"> J'accepte les Termes et les Conditions</label>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                            <label class="form-check-label" for="inlineCheckbox2">Instegram</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                            <label class="form-check-label" for="inlineCheckbox2">Linkdin</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                            <label class="form-check-label" for="inlineCheckbox2">Twitter</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                            <label class="form-check-label" for="inlineCheckbox2">Ami(e) / Connaissance</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                            <label class="form-check-label" for="inlineCheckbox2">Radio</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                            <label class="form-check-label" for="inlineCheckbox2">Télévision</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                            <label class="form-check-label" for="inlineCheckbox2">Forum Etudiant</label>
-                        </div>
-                    </div>                        
+                    </div>
                 <div>
                     <div class="d-flex justify-content-between">
                         <a class="btn border" routerLink="/Donneespre">
@@ -209,17 +216,18 @@
                             <span class="ms-1">Précédent</span>
                             
                         </a>
-                        <a class="btn border" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                            <span>Suivant</span>
-                            <i class="bi bi-arrow-right ms-1"></i>
-                        </a>
+                        <button class="btn border" [disabled]="!plusInfoFromGroup.valid" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <span>Términer</span>
+                        </button>
                     </div>
-                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" *ngIf="plusInfoFromGroup.valid">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header col d-flex justify-content-center">
                                     <h5 class="modal-title" id="staticBackdropLabel" style="color: rgb(61, 217, 61);">Les informations sont bien enregistrés</h5>
-                                    
                                 </div>
                                 <div class="modal-body">
                                     <div class="col d-flex justify-content-center">

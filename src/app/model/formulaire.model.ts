@@ -21,5 +21,6 @@ export interface Formulaire{
     langueAnglais: boolean;
     preRequisCoding: boolean;
     autodidacte: boolean;
-    rechercheEmploi: string;
+    referents: string;
+    commentaire:string;
 }

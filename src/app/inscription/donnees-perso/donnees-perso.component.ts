@@ -13,6 +13,12 @@ export class DonneesPersoComponent implements OnInit {
 
   donneePersoFromGroup!:FormGroup;
 
+  isFieldEnabled: boolean = true;
+
+  toggleFieldEnabled() {
+    this.isFieldEnabled = !this.isFieldEnabled;
+  }
+
   ngOnInit(): void {
     this.donneePersoFromGroup = this.formBuilder.group({
       prenom:this.formBuilder.control("",[Validators.required]),
