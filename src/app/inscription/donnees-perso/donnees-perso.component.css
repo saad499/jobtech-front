@@ -1,4 +1,9 @@
-li.active {
+li.actives {
     color: black;
     background-color: rgb(28, 211, 180);
 }
+
+.nav-pills .nav-link.active {
+    color: white;
+    background-color: rgb(28, 211, 180);
+  }

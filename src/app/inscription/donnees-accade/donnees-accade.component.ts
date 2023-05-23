@@ -39,6 +39,10 @@ export class DonneesAccadeComponent implements OnInit {
     this.router.navigateByUrl('/DonneesAccadem');
   }
 
+  plusInfo(){
+    this.router.navigateByUrl('/plusInfo');
+  }
+
   /*
   prenom, nom, dateNaissance,
   email, genre, telephone,

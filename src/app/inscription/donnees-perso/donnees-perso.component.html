@@ -1,80 +1,489 @@
-<div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-  </div>
 
-<ul class="nav justify-content-center mt-3">
-    <li class="nav-item" routerLinkActive="active">
-      <a class="nav-link active" aria-current="page" style="color: black;"  routerLink="/Donneespre">Données personnels</a>
+<ul class="nav nav-pills justify-content-center m-3" id="pills-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="pills-home-tab" data-bs-toggle="pill" style="color:black" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Données personnels</button>
     </li>
-    
-    <li class="nav-item" [class.disabled]="!donneePersoFromGroup.valid">
-      <a class="nav-link" style="color: black;"  [routerLink]="donneePersoFromGroup.valid ? '/DonneesAccadem' : null">Données accadémiques</a>
+    <li class="nav-item" role="presentation">
+      <button [disabled]="!donneePersoFromGroup.valid" class="nav-link" data-bs-toggle="pill" style="color:black" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Données accadémiques</button>
     </li>
-    <li class="nav-item">
-        <a class="nav-link" style="color: black;" [class.disabled]="isFieldEnabled" [routerLink]="isFieldEnabled ? '/plusInfo' : null">Plus d'infos</a>
+    <li class="nav-item" role="presentation">
+      <button [disabled]="!donneeAccadFromGroup.valid" class="nav-link" id="pills-contact-tab" style="color:black" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Plus d'infos</button>
     </li>
-</ul>
+  </ul>
 
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-6 m-2">
-            <form [formGroup]="donneePersoFromGroup">
-                <div class="row">
+  <form action="">
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="tab-content col-6" id="pills-tabContent">
+            <div [formGroup]="donneePersoFromGroup" class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                
+                <div class="row mt-3">
                     <div class="col">
                         <div class="mb-3">
                             <label for="prenom" class="form-label">Prénom</label>
                             
-                            <input type="text" style="background-color: #f1f3f6;" ngModel required class="form-control" id="prenom" placeholder="Votre prénom" formControlName="prenom">
+                            <input type="text" formControlName="prenom" style="background-color: #f1f3f6;" class="form-control" id="prenom" placeholder="Votre prénom">
                         </div>
                     </div>
                     <div class="col">
                         <div class="mb-3">
                             <label for="nom" class="form-label">Nom de famille</label>
-                            <input type="text" style="background-color: #f1f3f6;" ngModel required class="form-control" id="nom" placeholder="Votre nom de famille" formControlName="nom">
+                            <input type="text" formControlName="nom" style="background-color: #f1f3f6;" class="form-control" id="nom" placeholder="Votre nom de famille">
                         </div>
                     </div>
                 </div>
                 
-                <div class="mb-3">
-                    <label for="dateNaissance" class="form-label">Date de naissance</label>
-                    <input type="date" style="background-color: #f1f3f6;" ngModel required class="form-control" id="dateNaissance" formControlName="dateNaissance">
+                <div class="mb-3"> 
+                    <label for="age" class="form-label">Age</label>
+                    <input type="number" formControlName="age" style="background-color: #f1f3f6;" class="form-control" id="age" >
                 </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" style="background-color: #f1f3f6;" ngModel required class="form-control" id="email" placeholder="Votre adresse email" formControlName="email">
-                </div>
+                
                 <div class="mb-3">
                     <label for="genre" class="form-label">Genre</label>
-                    <select class="form-select" style="background-color: #f1f3f6;" id="genre"  formControlName="genre">
+                    <select class="form-select" formControlName="genre" style="background-color: #f1f3f6;" id="genre" >
                         <option value="">Sélectionnez votre genre</option>
                         <option value="homme">Homme</option>
                         <option value="femme">Femme</option>
                         <option value="autre">Autre</option>
                     </select>
                 </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" formControlName="email" style="background-color: #f1f3f6;" class="form-control" id="email" placeholder="Votre adresse email">
+                </div>
+                
                 <div class="mb-3">
                     <label for="telephone" class="form-label">Téléphone</label>
-                    <input type="tel" style="background-color: #f1f3f6;" ngModel required class="form-control" id="telephone" placeholder="Votre numéro de téléphone" formControlName="telephone">
+                    <input type="tel" formControlName="telephone" style="background-color: #f1f3f6;" class="form-control" id="telephone" placeholder="Votre numéro de téléphone">
                 </div>
+                
                 <div class="mb-3">
-                    <label for="adresse" class="form-label">Adresse</label>
-                    <textarea class="form-control" style="background-color: #f1f3f6;" id="adresse" rows="3" placeholder="Votre adresse" formControlName="adresse"></textarea>
+                    <label for="ville" class="form-label">Ville</label><br>
+                    <span style="color: rgb(28, 211, 180);">
+                        Ville de résidence actuelle
+                    </span>
+                    <select class="form-select mt-1" formControlName="ville" style="background-color: #f1f3f6;" id="genre" placeholder="Sélectionnez votre ville">
+                        <option value="">Sélectionnez votre ville</option>
+                        <option value="casa">Casablanca</option>
+                        <option value="sale">Salé</option>
+                        <option value="tanger">Tanger</option>
+                        <option value="fes">Fès</option>
+                        <option value="marrakech">Marrakech</option>
+                        <option value="safi">Safi</option>
+                        <option value="meknes">Meknés</option>
+                        <option value="oujda">Oujda</option>
+                        <option value="rabat">Rabat</option>
+                        <option value="temara">Temara</option>
+                        <option value="kenitra">Kenitra</option>
+                        <option value="tetouan">Tétouan</option>
+                        <option value="laayoune">Laayoune</option>
+                        <option value="mohammedia">Mohammédia</option>
+                        <option value="eljadida">El Jadida</option>
+                        <option value="Khouribga">Khouribga</option>
+                        <option value="benimellal">Béni Mellal</option>
+                        <option value="nador">Nador</option>
+                        <option value="taza">Taza</option>
+                        <option value="berkane">Berkane</option>
+                    </select>
                 </div>
-                <div>
-                    <div class="d-flex justify-content-between">
-                        <a class="btn border" routerLink="/">
-                            <i class="bi bi-arrow-left"></i>
-                            <span class="ms-1">Précédent</span>
-                            
-                        </a>
-                        <button (click)="donneesAcademique()" class="btn border" [disabled]="!donneePersoFromGroup.valid">
-                                <span>Suivant</span>
-                                <i class="bi bi-arrow-right ms-1"></i>
-                            
-                        </button>
+
+                <div class="mb-3">
+                    <label class="form-label">Choix de ville *</label><br>
+                    <span style="color: rgb(28, 211, 180);">
+                        Vous déclarez être bien disponible à temps plein et pouvoir être hébergé 
+                        dans une des villes suivantes sur toute la durée de la formation (environ 4 mois): 
+                        Cases à cocher choix multiples : Rabat / Casablanca
+                    </span><br>
+                    <div>
+                        <div class="form-check form-check-inline my-1">
+                            <input class="form-check-input" formControlName="choixVille" name="choixVille" type="checkbox" id="checkCasa" value="optionrabat">
+                            <label class="form-check-label">Casablanca</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" formControlName="choixVille" name="choixVille" type="checkbox" id="checkRabat" value="optioncasa">
+                            <label class="form-check-label">Rabat</label>
+                        </div>
                     </div>
                 </div>
-            </form>
+
+
+            </div>
+            <!--Données accademiques
+            
+            
+            Niveau_academic   
+            filiere_academic  
+            etablissement_freq
+            annee_diplome     
+            experience_pro    
+            situation         
+            cherche_emploi    
+            
+            
+            -->
+            <div [formGroup]="donneeAccadFromGroup" class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <div class="mb-3">
+                    <label class="form-label">Niveau Académique *</label><br>
+                    <span style="color: rgb(28, 211, 180);">
+                        Sélectionnez votre niveau académique.
+                    </span>
+                    <select class="form-select mt-1" formControlName="Niveau_academic" style="background-color: #f1f3f6;">
+                        <option value="">Sélectionnez l'option qui vous convient</option>
+                        <option value="sansbac"> Sans Bac </option>
+                        <option value="moinsbac2"> Moins Bac + 2 </option>
+                        <option value="bac2">Bac + 2 </option>
+                        <option value="Bac3">Bac + 3</option>
+                        <option value="bac4">Bac + 4</option>
+                        <option value="bac5">Bac + 5</option>
+                        <option value="Bac3">Bac + 3 et plus</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label  class="form-label">Filière Académique *</label><br>
+                    <span style="color: rgb(28, 211, 180);">
+                        Sélectionnez votre filière académique.
+                    </span>
+                   <!-- <select [(ngModel)]="autreOption">
+                        <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+                        <option value="autre">Autre</option>
+                      </select>
+                      
+                      Afficher la zone de saisie uniquement lorsque "Autre" est sélectionné
+                      <input *ngIf="autreOption === 'autre'" type="text" [(ngModel)]="autreOption">-->
+                    <select class="form-select mt-1" formControlName="filiere_academic" style="background-color: #f1f3f6;" onchange="yesnoCheck(this);">
+                        <option value="">Sélectionnez l'option qui vous convient</option>
+                        <option value="techNotInfo"> Technique (autre que informatique) </option>
+                        <option value="techGest"> Technique et Gestion </option>
+                        <option value="SUS"> Sciences Humaines et Sociales </option>
+                        <option value="lettres"> Lettres </option>
+                        <option value="droit">Droit</option>
+                        <option value="scientifique"> Scientifique </option>
+                        <option value="IngNotInfo"> Ingénierie (autre que informatique) </option>
+                        <option value="informatique">Informatique</option>
+                        <option value="other">Autre (précisez :)</option>
+                    </select>
+                    <!--<div id="ifYes" style="display: none;">
+                        <label for="car">Muu, mikä?</label> 
+                        <input type="text" id="car" name="car" /><br />
+                    </div>-->
+
+                </div>
+                <div class="mb-3">
+                    <label  class="form-label">Etablissment Fréquenté *</label><br>
+                    <span style="color: rgb(28, 211, 180);">
+                        Sélectionnez votre type d'établissement que vous fréquentez ou que vous aviez fréquenté.
+                    </span>
+                    <select class="form-select mt-1" formControlName="etablissement_freq" style="background-color: #f1f3f6;">
+                        <option value="">Sélectionnez l'option qui vous convient</option>
+                        <option value="UEOC"> Université ou Etablissement d'enseignement supérieur privé au Maroc </option>
+                        <option value="UEESPM"> Université ou Etablissement d'enseignement supérieur public au Maroc </option>
+                        <option value="ofppt"> OFPPT </option>
+                        <option value="autre"> Autre (Précisez :) </option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label  class="form-label">Diplomé en *</label><br>
+                    <span style="color: rgb(28, 211, 180);">
+                        Année d'obtention de votre dernier diplôme 
+                    </span>
+                    <input type="number" formControlName="annee_diplome" style="background-color: #f1f3f6;" class="form-control" id="anneediplome" placeholder="Entrer l'année d'obtention de votre dernier diplome">
+                </div>
+                
+
+
+
+                <div class="mb-3">
+                    <label class="form-label">Expérience Professionnelle *</label><br>
+                    <span style="color: rgb(28, 211, 180);">
+                        Avez-vous une expérience professionnelle ?
+                    </span>
+                    <div class="row mt-1">
+                        <div class="col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" formControlName="experience_pro" name="experience_pro" id="oui" value="oui">
+                                <label class="form-check-label" for="oui">Oui</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" formControlName="experience_pro" name="experience_pro" id="non" value="non">
+                                <label class="form-check-label" for="non">Non</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="row">
+                        <label class="form-check-label">Nombre d'années *</label>
+                        <span style="color: rgb(28, 211, 180);">
+                            Nombre d'années de votre expérience
+                        </span>
+                        <input type="text" *ngIf="choixnbrExpr==='oui'" [(ngModel)]="texteSaisinbrExpr" style="background-color: #f1f3f6;" class="form-control" id="nombreAnneeExperience" name="nombreAnneeExperience" placeholder="Entrer le nombre d'années d'expérience">
+                    </div>-->
+                </div>
+
+                <div class="mb-3">
+                    <label  class="form-label">Situation *</label><br>
+                    <span style="color: rgb(28, 211, 180);">
+                        Quelle est la situation qui vous caractérise le mieux ?
+                    </span>
+                    <select class="form-select" formControlName="situation" style="background-color: #f1f3f6;">
+                        <option value="">Sélectionnez l'option qui vous convient</option>
+                        <option value="Choix2"> Je serai prochainement diplômé - non IT - et je souhaite me reconvertir vers l'IT (reskilling étudiant) </option>
+                        <option value="Choix3"> Je serai prochainement diplômé en informatique et je souhaite améliorer mes compétences (upskilling étudiant) </option>
+                        <option value="Choix4"> Je suis récemment diplômé, en recherche d'emploi, et je souhaite me réorienter vers l'IT (reskilling diplômé) </option>
+                        <option value="Choix5"> Je suis récemment diplômé en IT, en recherche d'emploi et je souhaite consolider mes compétences (upskilling diplômé)</option>
+                        <option value="Choix6"> J'ai perdu mon emploi, je souhaite me réorienter vers l'IT (reskilling chercheurs d'emploi) </option>
+                        <option value="Choix7"> J ai perdu mon emploi, je souhaite me réorienter vers l IT (Re-Skilling Chercheurs d Emploi)</option>
+                        <option value="Choix7"> Je travaille actuellement, je ne suis pas satisfait de ma situation et souhaite me reconvertir vers l'IT (reskilling employés) </option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Recherche Emploi *</label><br>
+                    <span style="color: rgb(28, 211, 180);">
+                        Depuis combien de temps êtes vous en recherche d'emploi ?
+                    </span>
+                    <select class="form-select" formControlName="cherche_emploi" style="background-color: #f1f3f6;">
+                        <option value="">Sélectionnez l'option qui vous convient</option>
+                        <option value="changeEmploi">Je travail, mais je souhaite changer d'emploi</option>
+                        <option value="chercheremploi"> Je commence à peine ma recherche d'emploi (- de 3mois) </option>
+                        <option value="3mois">Depuis 6 mois</option>
+                        <option value="depuis6">Depuis 1 an</option>
+                        <option value="depuis1">Entre 1 et 2ans</option>
+                        <option value="entre12">Plus de 2ans</option>
+                    </select>
+                </div>
+            </div>
+            <!--Plus info-->
+            <div [formGroup]="plusInfoFromGroup" class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+               
+                <div class="mb-3">
+                    <label class="form-label"> Formations *</label><br>
+                    <span style="color: rgb(28, 211, 180);">
+                        Choix des formations
+                    </span>
+                    <select class="form-select" formControlName="Choix_formation" style="background-color: #f1f3f6;">
+                        <option value="">Sélectionnez l'option qui vous convient</option>
+                        <option value="changeEmploi"> Développeurs Front-End </option>
+                        <option value="chercheremploi"> Développeurs FullStack Javascript </option>
+                        <option value="chercheremploi"> Développeurs E-commerce </option>
+                        <option value="chercheremploi"> Cyber sécurité </option>
+                    </select>
+
+                    <span style="color: rgb(112, 75, 246);">
+                        <strong>Vous déclarez avoir bien pris connaissance <u>des modalités de candidature et de sélection</u> </strong>  
+                    </span>
+                </div>
+
+                <div class="mb-3">
+                    
+                    <label>Financement *</label>
+                    <br>
+                    <span style="color: rgb(28, 211, 180);">
+                        Comment prévoyez-vous de financer vos déplacements et vos frais de vie durant la formation ?
+                    </span>
+                    <select formControlName="financement" class="form-select mt-1" style="background-color: #f1f3f6;" >
+                        <option value="">Sélectionnez l'option qui vous convient</option>
+                        <option value="proche"> Aide par un proche </option>
+                        <option value="eco"> Des économies </option>
+                        <option value="pasFinance"> Je n'ai de source de financement </option>
+                    </select>
+                </div>
+
+                
+                <label>Ordinateur Portable *</label>
+                <div class="row">
+                    <span style="color: rgb(28, 211, 180);">
+                        Avez-vous un ordinateur portable personnel que vous pouvez utiliser lors de la formation ?
+                    </span>
+                    <div class="col mt-1">
+                        <div class="form-check">
+                            <input formControlName="ordinateur_portable" class="form-check-input" type="radio" id="Ordinateuroui" value="oui">
+                            <label class="form-check-label">Oui</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-check">
+                            <input formControlName="ordinateur_portable" class="form-check-input" type="radio" id="Ordinateurnon" value="non">
+                            <label class="form-check-label">Non</label>
+                        </div>
+                    </div>    
+                </div>
+
+                <label class="form-label">Pré-Requis Coding *</label>
+                <div class="row">
+                    <span style="color: rgb(28, 211, 180);">
+                        Avez-vous des pré-requis en coding ?
+                    </span>
+                    <div class="col mt-1">
+                        <div class="form-check">
+                            <input formControlName="requis_coding" class="form-check-input" type="radio"id="Codingoui" value="oui">
+                            <label class="form-check-label">Oui</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-check">
+                            <input formControlName="requis_coding" class="form-check-input" type="radio" id="Codingnon" value="non">
+                            <label class="form-check-label">Non</label>
+                        </div>
+                    </div>    
+                </div>
+
+                <label class="form-label">Auto formation *</label>
+                <div class="row">
+                    <span style="color: rgb(28, 211, 180);">
+                        Avez-vous déjà essayé d'apprendre le développement informatique par vous-même ?
+                    </span>
+                    <div class="col mt-1">
+                        <div class="form-check">
+                            <input formControlName="auto_formation" class="form-check-input" type="radio"id="Codingoui" value="oui">
+                            <label class="form-check-label">Oui</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-check">
+                            <input formControlName="auto_formation" class="form-check-input" type="radio" id="Codingnon" value="non">
+                            <label class="form-check-label">Non</label>
+                        </div>
+                    </div>    
+                </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label">Référents *</label><br>
+                    <span style="color: rgb(28, 211, 180);">
+                        Comment avez-vous entendu parler du programme (cases à cocher)?
+                    </span><br>
+                    <div>
+                        <div class="form-check form-check-inline my-1">
+                            <input formControlName="referents" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <label class="form-check-label">La Presse</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input formControlName="referents" class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                            <label class="form-check-label">Ecole /Université</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input formControlName="referents" class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                            <label class="form-check-label">Facebook ou Instegram</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input formControlName="referents" class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+                            <label class="form-check-label">LinkedIn</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input formControlName="referents" class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
+                            <label class="form-check-label">Twitter</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option7">
+                            <label class="form-check-label">Ami(e) / Connaissance</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input formControlName="referents" class="form-check-input" type="checkbox" id="inlineCheckbox8" value="option8">
+                            <label class="form-check-label">Radio</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input formControlName="referents" class="form-check-input" type="checkbox" id="inlineCheckbox9" value="option2">
+                            <label class="form-check-label">Télévision</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input formControlName="referents" class="form-check-input" type="checkbox" id="inlineCheckbox10" value="option2">
+                            <label class="form-check-label">Forum Etudiant</label>
+                          </div>
+                          
+                    </div>
+                </div>
+
+                <label class="form-label">Français *</label>
+                <div class="row">
+                    <span style="color: rgb(28, 211, 180);">
+                        Parlez-vous le Français ?
+                    </span>
+                    <div class="col mt-1">
+                        <div class="form-check">
+                            <input formControlName="francais" class="form-check-input" type="radio" id="Françaisoui" value="oui">
+                            <label class="form-check-label">Oui</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-check">
+                            <input formControlName="francais" class="form-check-input" type="radio" id="Françaisnon" value="non">
+                            <label class="form-check-label">Non</label>
+                        </div>
+                    </div>    
+                </div>
+
+                <label class="form-label">Anglais *</label>
+                <div class="row">
+                    <span style="color: rgb(28, 211, 180);">
+                        Parlez-vous l'anglais ?
+                    </span>
+                    <div class="col mt-1">
+                        <div class="form-check">
+                            <input formControlName="anglais" class="form-check-input" type="radio" id="Anglaisoui" value="oui">
+                            <label class="form-check-label">Oui</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-check">
+                            <input formControlName="anglais" class="form-check-input" type="radio" id="Anglaisnon" value="non">
+                            <label class="form-check-label">Non</label>
+                        </div>
+                    </div>    
+                </div>
+
+                
+
+                <label class="form-label">Autodidacte *</label>
+                <div class="row">
+                    <span style="color: rgb(28, 211, 180);">
+                        Avez-vous déjà essayé d'apprendre le développement informatique par vous-même ?
+                    </span>
+                    <div class="col mt-1">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="autodidacteoui" value="oui">
+                            <label class="form-check-label">Oui</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="autodidactenon" value="non">
+                            <label class="form-check-label">Non</label>
+                        </div>
+                    </div>    
+                </div>
+
+                
+
+                <div class="mb-3">
+                        
+                    <label class="form-label">Commentaire</label><br>
+                    <span style="color: rgb(28, 211, 180);">
+                        Laissez-nous un commentaire si vous en avez un, nous serions heureux de vous lire
+                    </span>
+                    <textarea class="form-control my-1" style="background-color: #f1f3f6;" id="commentaire" rows="3" placeholder="Ecrire un commentaire" ></textarea>
+                </div>
+                <div class="mb-3">
+                    <div class="form-check form-check-inline">
+                        <input formControlName="condition" class="form-check-input" type="checkbox" id="inlineCheckbox22" value="option2">
+                        <label class="form-check-label"> J'accepte les Termes et les Conditions</label>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
+        
     </div>
-</div>
+    <div class="col d-flex justify-content-center mb-2">
+        <button class="btn m-1" style="background-color: rgb(28, 211, 180);" id="previousButton">
+            <i class="bi bi-arrow-left"></i>
+            
+        </button>
+        <button [disabled]="isButtonDisabled" class="btn m-1" style="background-color: rgb(28, 211, 180);" id="nextButton">
+            
+            <i class="bi bi-arrow-right"></i>
+        </button>
+    </div>
+  </form>
